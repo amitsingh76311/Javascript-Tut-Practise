@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+     <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    function addLanguage(langname){
+    const li = document.createElement('li');
+     li.innerHTML = `${langname}`
+     document.querySelector('.language').appendChild(li);
+     console.log(li);
+     
+    }
+
+    // addLanguage("python");
+    // addLanguage("typescript");
+    // addLanguage('java');
+
+
+    // seccond ways:--
+
+    function addOptiLanguage(lang){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(lang));
+    document.querySelector('.language').appendChild(li);
+    
+    }
+   addOptiLanguage('golang');
+   addOptiLanguage('swift')
+
+   // How we can Edit:-- i have to edit second lanuage:--
+
+   const seccondLang = document.querySelector('li:nth-child(2)');
+//    console.log(seccondLang);
+
+//    seccondLang.innerHTML = 'mojo';
+
+   const newLi = document.createElement('li');
+
+   newLi.textContent = 'Mojo';
+
+   seccondLang.replaceWith(newLi)
+
+   // seccond ways for editing:--suppose we have to edit first lang:--
+
+   const firstLang = document.querySelector('li:nth-child(1)');
+    firstLang.outerHTML = '<li>react</li>'
+
+  // Remove :-- how we can remove :--
+
+  const lastLang = document.querySelector('li:last-child');
+  lastLang.remove()
+   
+</script>
+</html>
